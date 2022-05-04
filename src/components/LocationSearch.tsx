@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import React, {FC, useState} from "react";
 
 interface LocationSearchProps {
@@ -15,12 +16,13 @@ export const LocationSearch: FC<LocationSearchProps> = ({onSearch}) => {
 
   return (
     <div>
-      <label>
+      {/* <label>
         <input type="text" value={locationSearch}
                onChange={e => setLocationSearch(e.target.value)}/>
-      </label>
-      <button className="btn btn-primary"
-              onClick={addLocation} disabled={disableSearch}>Search</button>
+      </label> */}
+      <TextField id="outlined-basic" label="Város" variant="outlined" value={locationSearch}
+               onChange={e => setLocationSearch(e.target.value)} ></TextField>
+      <Button onClick={addLocation} variant="contained" disabled={disableSearch} >Keres</Button>
     </div>
   );
 }

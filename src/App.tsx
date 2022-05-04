@@ -5,7 +5,8 @@ import {LocationTable} from "./components/LocationTable";
 import {WeatherLocation} from "./api/Weather";
 import {searchLocation} from "./api/WeatherService";
 import {ErrorAlert, WarningAlert} from "./components/Alerts";
-import {WeatherSummary, WeatherEntry} from "./components/WeatherEntry";
+import {WeatherMain} from "./components/CurrentWeather";
+import DemoUI from "./components/DemoMaterialUI"
 //import { Demo } from './Demo';
 
 const App: FC = () => {
@@ -35,15 +36,14 @@ const App: FC = () => {
   return (
     <div className="container">
 
-
       <LocationSearch onSearch={addLocation}/>
       <ErrorAlert message={error}/>
       <WarningAlert message={warning}/>
       <LocationTable locations={locations}
                      current={currentLocation}
                      onSelect={location => setCurrentLocation(location)}/>
-
-      <WeatherSummary location={currentLocation}/>
+      <WeatherMain location={currentLocation}/>
+      {/* <DemoUI></DemoUI> */}
     </div>
       //  <div>
       //    <Demo></Demo>
